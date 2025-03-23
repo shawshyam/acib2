@@ -9,6 +9,8 @@
 </head>
 
 <body>
+
+
        <div class="container" id="loginContainer">
               <h2>Login</h2>
               <input type="password" id="password" placeholder="Enter Password" required><br><br>
@@ -19,11 +21,12 @@
               <h2>Student Details</h2>
               <form id="studentForm">
                      <input type="text" id="name" placeholder="Enter your name" required><br><br>
-                     <input type="text" id="roll" placeholder="Enter your roll number" required><br><br>
+                     <input type="number" id="roll" placeholder="Enter your roll number" required><br><br>
                      <button type="submit">Start Exam</button>
               </form>
        </div>
 
+      
        <div class="container hidden" id="examContainer">
 
               <h2>Aryabhatta Coaching Institute ,Baharagora</h2>
@@ -63,6 +66,7 @@
               }
 
               function startExam() {
+
                      fetch("https://script.google.com/macros/s/AKfycbxdOH-B6i9Cv_8AxzeTdFSiYcBr70_kp2eA-HalL9YEwgWJQJj_Z1h5Z64OslRqd6OBQA/exec")
                             .then(response => response.json())
                             .then(data => {
@@ -115,7 +119,7 @@
 
 
               function submitExam() {
-                     
+
 
                      clearInterval(timerInterval);
                      localStorage.removeItem("examTime");
@@ -159,7 +163,7 @@
                             .catch(error => console.error("Error:", error));
 
               }
-              
+
 
        </script>
 </body>
