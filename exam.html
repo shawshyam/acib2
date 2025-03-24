@@ -26,16 +26,19 @@
               </form>
        </div>
 
-      
-       <div class="container hidden" id="examContainer">
 
-              <h2>Aryabhatta Coaching Institute ,Baharagora</h2>
+       <div class="container hidden" id="examContainer">
+              <h2>Aryabhatta Coaching Institute, Baharagora</h2>
               <h3>Online Exam</h3>
               <div id="timer">Time Left: 30:00</div>
               <div id="exam"></div>
+              <div id="questionImageContainer" class="hidden">
+                     <img id="questionImage" alt="Question Image">
+              </div>
               <button id="submitBtn" onclick="submitExam()">Submit</button>
               <div id="result" class="hidden"></div>
        </div>
+
 
        <script>
 
@@ -67,7 +70,7 @@
 
               function startExam() {
 
-                     fetch("https://script.google.com/macros/s/AKfycbxdOH-B6i9Cv_8AxzeTdFSiYcBr70_kp2eA-HalL9YEwgWJQJj_Z1h5Z64OslRqd6OBQA/exec")
+                     fetch("https://script.google.com/macros/s/AKfycbzNd8Py1jX0CVb5SwyqLUwdtJ2Gv3PbsQ7xpRf6oAByvji2LY_cTXywOk_YS1u-2822/exec")
                             .then(response => response.json())
                             .then(data => {
                                    shuffleArray(data); // Questions ko shuffle karna
@@ -147,7 +150,7 @@
                      document.querySelectorAll("input[type='radio']").forEach(input => input.disabled = true);
 
                      // Send Data to Google Sheet
-                     fetch("https://script.google.com/macros/s/AKfycbxdOH-B6i9Cv_8AxzeTdFSiYcBr70_kp2eA-HalL9YEwgWJQJj_Z1h5Z64OslRqd6OBQA/exec", {
+                     fetch("https://script.google.com/macros/s/AKfycbzNd8Py1jX0CVb5SwyqLUwdtJ2Gv3PbsQ7xpRf6oAByvji2LY_cTXywOk_YS1u-2822/exec", {
                             method: "POST",
                             headers: {
                                    "Content-Type": "application/json",
